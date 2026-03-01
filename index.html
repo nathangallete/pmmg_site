@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAlpha | Interceptação Tática de Fugitivos</title>
+    <meta name="description"
+        content="SuperAlpha: O aplicativo tático definitivo para forças policiais na interceptação e captura de fugitivos com rastreamento em tempo real.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <h1 class="loader-logo">SUPER<span>ALPHA</span></h1>
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">SUPER<span>ALPHA</span></div>
+            <div class="nav-links">
+                <a href="#funcionalidades">Funcionalidades</a>
+                <a href="#mapa">Mapa Tático</a>
+                <a href="#sos">Sistema SOS</a>
+                <a href="#" class="btn btn-outline">Acessar Sistema</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="badge">Operação PMMG</span>
+                    <h1>Dominando o Terreno na <span>Interceptação Policial</span></h1>
+                    <p>Coordenacão total, visibilidade em tempo real e resposta imediata. O SuperAlpha transforma a
+                        perseguição em uma operação tática precisa.</p>
+                    <div class="hero-btns">
+                        <a href="#mapa" class="btn btn-primary">Ver Mapa Tático</a>
+                        <a href="#funcionalidades" class="btn btn-secondary">Explorar Funções</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <div class="map-preview">
+                            <div class="radar-circle"></div>
+                            <div class="police-unit unit-1"><i data-lucide="shield"></i></div>
+                            <div class="police-unit unit-2"><i data-lucide="shield"></i></div>
+                            <div class="fugitive-unit"><i data-lucide="flame"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="funcionalidades">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Vantagens <span>Operacionais</span></h2>
+                    <p>Tecnologia desenhada para quem está na linha de frente.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i data-lucide="zap"></i>
+                        <h3>Facilidade de Uso</h3>
+                        <p>Interface intuitiva projetada para operação sob estresse, garantindo rapidez no acesso às
+                            informações.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="radar"></i>
+                        <h3>Alpha Sempre Visível</h3>
+                        <p>Saiba a localização exata de cada unidade Alpha a todo momento com atualização em tempo real.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="target"></i>
+                        <h3>Controle Total</h3>
+                        <p>Maior domínio tático durante perseguições e interceptações de alto risco.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="layout-grid"></i>
+                        <h3>Cercos e Bloqueios</h3>
+                        <p>Coordene perímetros de cerco e pontos de bloqueio com facilidade e precisão geográfica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOS Section - Background Focused -->
+        <section class="interactive-map" id="sos">
+            <div class="map-bg-overlay"></div>
+            <svg id="tactical-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+                <path id="city-streets"
+                    d="M10,10 L790,10 L790,490 L10,490 Z M100,100 L700,100 M100,200 L700,200 M100,300 L700,300 M100,400 L700,400 M200,100 L200,400 M400,100 L400,400 M600,100 L600,400"
+                    stroke="rgba(0, 242, 254, 0.1)" stroke-width="1" fill="none" />
+                <circle id="sos-point" cx="650" cy="350" r="8" fill="#ff4d4d" class="sos-blink" />
+                <path id="rescue-path" d="" stroke="#00f2fe" stroke-width="3" fill="none" class="rescue-stroke" />
+            </svg>
+            <div class="container">
+                <div class="sos-content">
+                    <span class="badge badge-alert">Emergência</span>
+                    <h2>Resposta Automática ao <span>SOS</span></h2>
+                    <p>O SuperAlpha identifica o alerta e traça instantaneamente a rota de apoio mais eficiente,
+                        reduzindo o tempo de resposta em situações críticas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">SUPER<span>ALPHA</span></div>
+                <p>Tecnologia em prol da segurança pública e eficácia operacional.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links</h4>
+                <a href="#">Portal do Oficial</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Ajuda</a>
+            </div>
+            <div class="footer-social">
+                <h4>Contato Emergencial</h4>
+                <p>Suporte 24/7 para unidades em campo.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperAlpha Tactical Systems. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
