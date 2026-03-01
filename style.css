@@ -489,7 +489,11 @@ h3,
 /* Ecosystem Section */
 .ecosystem {
     padding: 100px 0;
-    background: linear-gradient(180deg, var(--bg-dark) 0%, #0c121a 100%);
+    position: relative;
+    background-image: linear-gradient(rgba(10, 14, 20, 0.95), rgba(10, 14, 20, 0.95)), url('assets/tactical_map_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .ecosystem-grid {
