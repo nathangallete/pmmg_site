@@ -365,7 +365,7 @@ h3,
 .interactive-map {
     position: relative;
     padding: 150px 0;
-    min-height: 600px;
+    min-height: 750px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -478,5 +478,144 @@ h3,
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+}
+
+/* Ecosystem Section */
+.ecosystem {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #0c121a 100%);
+}
+
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.eco-card {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.eco-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.eco-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.eco-card p {
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+}
+
+.eco-visual {
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 20px rgba(0, 242, 254, 0.05);
+}
+
+.eco-visual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.eco-list {
+    list-style: none;
+}
+
+.eco-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.eco-list li i {
+    color: var(--primary);
+    width: 20px;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 100px 0;
+    background: #05070a;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.benefit-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.benefit-item p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+
+    .ecosystem-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
     }
 }
