@@ -24,7 +24,10 @@
 <body>
     <div id="loader" class="loader-wrapper">
         <div class="loader-content">
-            <h1 class="loader-logo">SUPER<span>ALPHA</span></h1>
+            <h1 class="loader-logo">
+                <img src="assets/logo.png" alt="SuperAlpha Logo">
+                SUPER<span>ALPHA</span>
+            </h1>
             <div class="loader-bar-container">
                 <div class="loader-bar"></div>
             </div>
@@ -33,12 +36,16 @@
 
     <nav class="navbar">
         <div class="container">
-            <div class="logo">SUPER<span>ALPHA</span></div>
+            <div class="logo">
+                <img src="assets/logo.png" alt="SuperAlpha Logo">
+                SUPER<span>ALPHA</span>
+            </div>
             <div class="nav-links">
                 <a href="#funcionalidades">Funcionalidades</a>
                 <a href="#mapa">Mapa Tático</a>
                 <a href="#sos">Sistema SOS</a>
-                <a href="#" class="btn btn-outline">Acessar Sistema</a>
+                <a href="#" onclick="alert('Aguardando publicação do aplicativo')" class="btn btn-outline">Acessar
+                    Sistema</a>
             </div>
         </div>
     </nav>
@@ -128,18 +135,22 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <div class="logo">SUPER<span>ALPHA</span></div>
+                <div class="logo">
+                    <img src="assets/logo.png" alt="SuperAlpha Logo">
+                    SUPER<span>ALPHA</span>
+                </div>
                 <p>Tecnologia em prol da segurança pública e eficácia operacional.</p>
             </div>
             <div class="footer-links">
                 <h4>Links</h4>
                 <a href="#">Portal do Oficial</a>
-                <a href="#">Privacidade</a>
-                <a href="#">Ajuda</a>
+                <a href="#" onclick="alert('Termos de Uso e Privacidade')">Privacidade</a>
+                <a href="#" onclick="alert('Ajuda')">Ajuda</a>
             </div>
             <div class="footer-social">
-                <h4>Contato Emergencial</h4>
-                <p>Suporte 24/7 para unidades em campo.</p>
+                <h4>Contato</h4>
+                <p onclick="window.location.href='mailto:comercial@superalpha.com.br'">comercial@superalpha.com.br</p>
+                <p onclick="window.location.href='tel:+5531995112268'">+55 (31) 99511-2268</p>
             </div>
         </div>
         <div class="footer-bottom">
