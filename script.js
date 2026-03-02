@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Register GSAP Plugins immediately
+    gsap.registerPlugin(ScrollTrigger);
+
     // Initialize Lucide Icons
     lucide.createIcons();
 
@@ -21,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power4.inOut',
                     onComplete: () => {
                         loader.style.display = 'none';
+                        document.body.classList.remove('is-loading');
                         initAnimations();
                     }
                 });
@@ -30,8 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- GSAP Animations ---
     function initAnimations() {
-        gsap.registerPlugin(ScrollTrigger);
-
         // Hero Content Reveal
         const heroTl = gsap.timeline();
         heroTl.from('.hero-text h1', {
@@ -88,50 +90,45 @@ document.addEventListener('DOMContentLoaded', () => {
             yoyo: true,
             ease: 'sine.inOut'
         });
-    }
 
-    // --- SOS Simulation Logic (Automatic on Scroll) ---
-    const rescuePath = document.getElementById('rescue-path');
+        // --- SOS Simulation Logic (Inside initAnimations) ---
+        const rescuePath = document.getElementById('rescue-path');
+        if (rescuePath) {
+            const pathData = "M100,100 L400,100 L400,350 L650,350";
+            rescuePath.setAttribute('d', pathData);
+            gsap.set(rescuePath, { strokeDasharray: 1000, strokeDashoffset: 1000 });
 
-    // Create the path for demonstration
-    const pathData = "M100,100 L400,100 L400,350 L650,350";
-    rescuePath.setAttribute('d', pathData);
-
-    // Set initial dash offset (assuming the path is long, 1000 is a safe bet for this SVG)
-    gsap.set(rescuePath, { strokeDasharray: 1000, strokeDashoffset: 1000 });
-
-    ScrollTrigger.create({
-        trigger: '#sos',
-        start: 'top 60%',
-        onEnter: () => {
-            gsap.to(rescuePath, {
-                strokeDashoffset: 0,
-                duration: 2.5,
-                ease: 'power2.inOut'
+            ScrollTrigger.create({
+                trigger: '#sos',
+                start: 'top 60%',
+                onEnter: () => {
+                    gsap.to(rescuePath, {
+                        strokeDashoffset: 0,
+                        duration: 2.5,
+                        ease: 'power2.inOut'
+                    });
+                    gsap.to('.sos-blink', {
+                        animationDuration: '0.5s',
+                        duration: 1
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.set(rescuePath, { strokeDashoffset: 1000 });
+                }
             });
-
-            // Animation for the SOS point pulse speedup
-            gsap.to('.sos-blink', {
-                animationDuration: '0.5s',
-                duration: 1
-            });
-        },
-        onLeaveBack: () => {
-            // Reset if scrolled back up
-            gsap.set(rescuePath, { strokeDashoffset: 1000 });
         }
-    });
 
-    // Animate content in SOS section
-    gsap.from('.sos-content > *', {
-        scrollTrigger: {
-            trigger: '#sos',
-            start: 'top 70%'
-        },
-        x: -50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out'
-    });
+        // Animate content in SOS section
+        gsap.from('.sos-content > *', {
+            scrollTrigger: {
+                trigger: '#sos',
+                start: 'top 70%'
+            },
+            x: -50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+    }
 });
