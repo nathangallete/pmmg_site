@@ -51,7 +51,7 @@ h3,
 }
 
 .loader-logo {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 8vw, 3rem);
     font-weight: 900;
     letter-spacing: 4px;
     margin-bottom: 20px;
@@ -59,10 +59,12 @@ h3,
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
 }
 
 .loader-logo img {
-    height: 80px;
+    height: clamp(50px, 15vw, 80px);
     width: auto;
 }
 
@@ -71,7 +73,8 @@ h3,
 }
 
 .loader-bar-container {
-    width: 200px;
+    width: 80%;
+    max-width: 300px;
     height: 4px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
@@ -626,5 +629,10 @@ h3,
     .ecosystem-grid,
     .benefits-grid {
         grid-template-columns: 1fr;
+    }
+
+    .loader-logo {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
