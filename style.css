@@ -363,6 +363,9 @@ h3,
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
 }
 
 .feature-card p {
